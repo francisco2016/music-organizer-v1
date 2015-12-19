@@ -10,7 +10,7 @@ public class MusicOrganizer
 {
     // An ArrayList for storing the file names of music files.
     private ArrayList<String> files;
-        
+
     /**
      * Create a MusicOrganizer
      */
@@ -18,7 +18,7 @@ public class MusicOrganizer
     {
         files = new ArrayList<String>();
     }
-    
+
     /**
      * Add a file to the collection.
      * @param filename The file to be added.
@@ -27,7 +27,7 @@ public class MusicOrganizer
     {
         files.add(filename);
     }
-    
+
     /**
      * Return the number of files in the collection.
      * @return The number of files in the collection.
@@ -36,30 +36,30 @@ public class MusicOrganizer
     {
         return files.size();
     }
-    
+
     /**
      * List a file from the collection.
      * @param index The index of the file to be listed.
      */
     public void listFile(int index)
     {
-        if(index >= 0 && index < files.size()) {
+        if(validIndex(index)) {            //if(index >= 0 && index < files.size()){     }
             String filename = files.get(index);
             System.out.println(filename);
         }
     }
-    
+
     /**
      * Remove a file from the collection.
      * @param index The index of the file to be removed.
      */
     public void removeFile(int index)
-    {
-        if(index >= 0 && index < files.size()) {
+    {  
+        if(validIndex(index)){
             files.remove(index);
         }
     }
-    
+
     /** Mt. toma un parámetro entero y comprueba que sea un índice válido para el atributo files. Si el parámetro no es válido debe mostrar
      * un mensaje de error por pantalla e indicar el rango válido
      */
@@ -68,46 +68,18 @@ public class MusicOrganizer
         if (valor >= 0 && valor < files.size()){}  // no pasa nada.
         else{System.out.println("El valor ha de ser mayor o igual a 0 y menor o igual a: " + index);}
     }
-    
+
     /**
      * Mt. que devuelve un valor booleano en función de si su parámetro entero es un índice válido o no para el atributo files
      */
     public boolean validIndex(int valorB){
         boolean indexB = false;
-       
+
         if (valorB >= 0 && valorB < files.size()){
             indexB = true;
         }  
         return indexB;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
