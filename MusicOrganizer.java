@@ -59,4 +59,14 @@ public class MusicOrganizer
             files.remove(index);
         }
     }
+    
+    /** Mt. toma un parámetro entero y comprueba que sea un índice válido para el atributo files. Si el parámetro no es válido debe mostrar
+     * un mensaje de error por pantalla e indicar el rango válido
+     */
+    public void checkIndex(int valor){
+        int index = files.size() -1;
+        if (valor >= 0 && valor < files.size()){}  // no pasa nada.
+        else{System.out.println("El valor ha de ser mayor o igual a 0 y menor o igual a: " + index);}
+    }
+
 }
