@@ -68,5 +68,46 @@ public class MusicOrganizer
         if (valor >= 0 && valor < files.size()){}  // no pasa nada.
         else{System.out.println("El valor ha de ser mayor o igual a 0 y menor o igual a: " + index);}
     }
-
+    
+    /**
+     * Mt. que devuelve un valor booleano en función de si su parámetro entero es un índice válido o no para el atributo files
+     */
+    public boolean validIndex(int valorB){
+        boolean indexB = false;
+       
+        if (valorB >= 0 && valorB < files.size()){
+            indexB = true;
+        }  
+        return indexB;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
