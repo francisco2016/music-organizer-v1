@@ -43,7 +43,7 @@ public class MusicOrganizer
      */
     public void listFile(int index)
     {
-        if(validIndex(index)) {            //if(index >= 0 && index < files.size()){     }
+        if(validIndex(index)) {            //if(index >= 0 && index < files.size()){  String filename = files.get(index);
             String filename = files.get(index);
             System.out.println(filename);
         }
@@ -55,7 +55,7 @@ public class MusicOrganizer
      */
     public void removeFile(int index)
     {  
-        if(validIndex(index)){
+        if(validIndex(index)){           //if(index >= 0 && index < files.size()){files.remove(index);}
             files.remove(index);
         }
     }
@@ -63,16 +63,27 @@ public class MusicOrganizer
     /** Mt. toma un parámetro entero y comprueba que sea un índice válido para el atributo files. Si el parámetro no es válido debe mostrar
      * un mensaje de error por pantalla e indicar el rango válido
      */
-    public void checkIndex(int valor){
-        int index = files.size() -1;
-        if (valor >= 0 && valor < files.size()){}  // no pasa nada.
-        else{System.out.println("El valor ha de ser mayor o igual a 0 y menor o igual a: " + index);}
+    public void checkIndex(int index){
+        //         int index = files.size() -1;       se puede mejorar
+        //         if (valor >= 0 && valor < files.size()){}  // no pasa nada.
+        //         else{System.out.println("El valor ha de ser mayor o igual a 0 y menor o igual a: " + index);}
+        if(index < 0 || index >= files.size()){
+        System.out.println("Indice no valido.");
+        if (files.size() == 0) {
+        System.out.println("Debe haber archivos para hacer la comprobacion");
+        }
+        else {
+            System.out.println("Los indice validos son del 0 al " + (files.size()-1));      
+        }
+    }
     }
 
     /**
      * Mt. que devuelve un valor booleano en función de si su parámetro entero es un índice válido o no para el atributo files
      */
     public boolean validIndex(int valorB){
+        
+        //return (valorB >= 0 && valorB < files.size()); con esta línea queda resuelto el método.
         boolean indexB = false;
 
         if (valorB >= 0 && valorB < files.size()){
@@ -81,5 +92,4 @@ public class MusicOrganizer
         return indexB;
     }
 }
-
 
